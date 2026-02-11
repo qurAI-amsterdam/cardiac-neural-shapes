@@ -1,0 +1,19 @@
+{
+    "train": [
+        "CtaID_1",
+        "CtaID_2",
+        "CtaID_3",
+        "CtaID_4",
+        "..."
+    ],
+    "val": [
+        "CtaID_5",
+        "CtaID_6",
+        "..."
+    ],
+    "test": [
+        "CtaID_7",
+        "CtaID_8",
+        "..."
+    ]
+}

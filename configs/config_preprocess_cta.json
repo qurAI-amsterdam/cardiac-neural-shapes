@@ -1,0 +1,30 @@
+{
+    "GENERAL": {
+     "base_dir": "/home/...",
+     "gpu": 0,
+     "mode": "preprocess_cta",
+     "seed": 0
+    },
+
+    "DATA": {
+     "data_dir": "path_to_data_directory",
+     "ctas_to_use": "",
+     "segm_folders": ["name_of_segmentation_folder1, ..."],
+     "mesh_folder": "name_of_output_meshes_folder",
+     "mesh_labels": ["LVBP", "LV", "RVBP"],
+     "mesh_colors": ["", "", ""],
+     "labels_class": "CTALabelTS",
+     "pat_id_digits": 8
+    },
+
+    "PREPROCESSING": {
+     "segm_padding": 10,
+     "samples_per_mesh": 100000,
+     "target_bounds": [-1, 1, -1, 1, -1, 1],
+     "canonical_align_x": true,
+     "canonical_flip_y": false,
+     "max_norm_coords": 0,
+     "scale_factor": 0.8,
+     "sigma_gaussian": 0.33
+    }
+}

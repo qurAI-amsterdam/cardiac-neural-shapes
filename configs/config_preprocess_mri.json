@@ -1,0 +1,33 @@
+{
+    "GENERAL": {
+     "base_dir": "/home/...",
+     "gpu": 7,
+     "mode": "preprocess_mri",
+     "seed": 0
+    },
+
+    "DATA": {
+     "data_dir": "path_to_data_directory",
+     "segm_folders": ["name_of_segmentation_folder1, ..."],
+     "mesh_folder": "name_of_output_meshes_folder",
+     "mesh_labels": ["LVBP", "LV", "RVBP"],
+     "mesh_colors": ["", "", ""],
+     "labels_class": "MRILabel",
+     "pat_id_digits": 4
+    },
+
+    "PREPROCESSING": {
+     "segm_padding": 10,
+     "target_bounds": [-1, 1, -1, 1, -1, 1],
+     "canonical_flip_y": false,
+     "canonical_align_x": true,
+     "max_norm_coords": "(float) insert after CTA preprocessing!",
+     "scale_factor": 0.8,
+     "phase": "ED",
+     "level_set": 0,
+     "surface_tolerance": 2,
+     "lv_epi": false,
+     "save_transforms": true,
+     "use_transforms_from": ""
+    }
+}

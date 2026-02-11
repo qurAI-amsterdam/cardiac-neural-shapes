@@ -1,0 +1,76 @@
+{
+    "GENERAL": {
+     "base_dir": "/home/...",
+     "gpu": 7,
+     "mode": "train",
+     "seed": 0
+    },
+
+    "DATA": {
+     "data_dir": "path_to_data_directory"
+    },
+
+    "DATALOADER": {
+     "data_split_path": "data/cta_data_split.json",
+     "load_folder": "name_of_meshes_folder/multi/multi",
+     "setup_labels": ["LV", "RVBP"],
+     "n_samples_per_mesh": 1024,
+     "surface_only": false,
+     "load_normals": false,
+     "batch_size": 8
+    },
+
+    "LOSS": {
+     "loss_name": "L2",
+     "weights": false,
+     "reg_lambda": 0.0001,
+     "eikonal_lambda": 0.01,
+     "normals_lambda": 0,
+     "cosine_lambda": 0
+     },
+
+    "MODEL": {
+     "network": "FasterDecoder", 
+     "shape_latent_size": 128,
+     "in_dim": 3,
+     "hidden_layers": 7,
+     "hidden_kernel_size": 512,
+     "norm_layer": "weight_norm",
+     "non_linearity": "relu",
+     "dropout": 0,
+     "skip_connection": false,
+     "clamp": false,
+     "tanh_scaling": 1
+    },
+
+    "OPTIMIZER": {
+     "optimizer": "AdamW",
+     "lr": 0.001,
+     "lr_policy": "CosineAnnealingWarmRestarts",
+     "lr_steps": 1000,
+     "lr_milestones": [],
+     "max_epochs": 1000,
+     
+     "FIND_LATENT": {
+      "init_mean": 0,
+      "init_std": 0.01,
+      "find_latent_every": 10,
+      "find_latent_niters": 100,
+      "optimizer": "AdamW",
+      "lr": 0.001,
+      "lr_policy": "StepLR",
+      "lr_steps": 50,
+      "lr_gamma": 0.5,
+      "loss_name": "L1Loss",
+      "reg_lambda": 0.0001,
+      "weights": false
+     }
+    },
+
+    "EVAL": {
+     "validate_every": 10,
+     "metric": "",
+     "name": ""
+    }
+}
+    

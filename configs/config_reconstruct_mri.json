@@ -1,0 +1,35 @@
+{
+    "GENERAL": {
+     "base_dir": "/home/...",
+     "gpu": 7,
+     "seed": 0,
+     "mode": "reconstruct_mri"
+    },
+
+    "DATA":{
+     "input_dir": "path_to_reference_meshes_directory",
+     "setup_labels": ["LV", "RVBP"],
+     "labels_class": "MRILabel",
+     "pat_id_digits": 4,
+     "outputs_dir": "path_to_output_directory", 
+     "project_folder": "cardiac-neural-shapes",
+     "modality": "MRI", 
+     "dataset": "dataset_name", 
+     "out_folder": "name_of_output_folder",
+     "phase": "ED"
+    },
+
+    "RECONSTRUCTION":{
+     "chkpnt_relative_path": "path_to_model_weights/checkpoints.ckpt",  
+     "grid_res": 200,
+     "grid_lims": [-1, 1],
+     "level_set": 0,
+     "n_iters_latent": 100,
+     "smooth_iters": 0,
+     "load_normals": false,
+     "n_samples_sax_per_mesh": 500,
+     "samples_type": "tolerance",
+     "use_lax": true
+    }   
+}
+    
